@@ -1,11 +1,13 @@
 package challenge.literalura.literalura.main;
 
+import challenge.literalura.literalura.repository.BooksRepository;
 import challenge.literalura.literalura.service.Api;
 import challenge.literalura.literalura.service.ConvertData;
 
 import java.util.Scanner;
 
 public class Main {
+    private BooksRepository repo;
     private static final String URL_API = "https://gutendex.com/books/";
     private Api connectionApi = new Api();
     private ConvertData convertData = new ConvertData();
@@ -21,6 +23,10 @@ public class Main {
             0.- Salir
             --------------
             """;
+
+    public Main(BooksRepository repo) {
+        this.repo = repo;
+    }
 
     public void run() {
         var option = -1;
