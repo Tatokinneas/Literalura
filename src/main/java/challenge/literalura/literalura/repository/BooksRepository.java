@@ -1,4 +1,6 @@
 package challenge.literalura.literalura.repository;
 
-public interface BooksRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BooksRepository extends JpaRepository {
 }
