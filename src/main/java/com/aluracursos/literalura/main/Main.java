@@ -168,7 +168,7 @@ public class Main {
     }
 
     private DataBooks getDataBooks() {
-        System.out.println("Escribe del libro:");
+        System.out.println("Escribe el nombre del libro:");
         var bookName = input.nextLine();
         System.out.println("Buscando libro por titulo... \n");
         var json = connectionApi.connectionApi(URL_API + "?search=" + bookName.replace(" ", "+"));

@@ -5,75 +5,101 @@ En este emocionante desafío de programación, te invitamos a construir tu propi
 
 - **Consulta de libros por su titulo**: Soporta conversiones entre USD, CLP, BRL, COP y MXN.
 - **Interfaz de usuario intuitiva**: Menú claro y fácil de navegar.
-- **Uso de Persistencia de datos con PostgreSQL**: Se ha confi
-
-## Monedas soportadas
-
-- **Dólar estadounidense (USD)**
-- **Peso chileno (CLP)**
-- **Real brasileño (BRL)**
-- **Peso colombiano (COP)**
-- **Peso mexicano (MXN)**
+- **Uso de Persistencia de datos con PostgreSQL**: Se ha configurado el uso de JPA para que la informacion consultada se guarde en una BD de PostgreSQL.
 
 ## Uso
 
 ### Prerrequisitos
 
-- Java Development Kit (JDK) 8 o superior
-- Conexión a Internet para acceder a la API de ExchangeRate-API y API-Key para poder usarlo.
+- Java Development Kit (JDK) 17 o superior
+- Conexión a Internet para acceder a la API de GutenDex-API.
 
 ### Instalación
 
 1. **Clonar el repositorio**:
    ```sh
-   git clone https://github.com/tuusuario/conversor-de-monedas.git
+   git clone https://github.com/tatokinneas/literalura.git
    ```
 
 2. **Navegar al directorio del proyecto:**
    ```sh
-   cd conversor-de-monedas
+   cd literalura
    ```
 3. **Compilar el proyecto:**
    ```sh
-   javac Main.java
+   javac LiteraluraAplication.java
    ```
 4. **Ejecutar el proyecto:**
    ```sh
-   java Main
+   java Literalura
    ```
 ### Ejemplo de Uso
 Al ejecutar la aplicación, verás un menú como el siguiente:
 
-   ```sh
-  |****************************************| 
-  Sea bienvenido/a al Conversor de Monedas 
-  Ahora indique cual conversión desea realizar 
-  1) Dólar estadounidense =>> Peso chileno 
-  2) Peso chileno =>> Dólar estadounidense 
-  3) Dólar estadounidense =>> Real brasileño 
-  4) Real brasileño =>> Dólar estadounidense 
-  5) Dólar estadounidense =>> Peso colombiano 
-  6) Peso colombiano =>> Dólar estadounidense 
-  7) Dólar estadounidense =>> Peso mexicano 
-  8) Peso mexicano =>> Dólar estadounidense 
-  9) Salir 
-   Elija una opción válida:
-  |***************************************|
-   Elige la cantidad que deseas convertir: 
+   ```sh 
+  -------------------
+    Elija la opcion indicada:
+        1.- Buscar libro por titulo
+        2.- Listar libros registrados
+        3.- Listar autores registrados
+        4.- Listar autores vivos en determinado año
+        5.- Listar libros idioma
+        0.- Salir
+  ------------------
   ```
 
-1. **Selecciona la opción deseada:** Ingresa el número de la conversión que deseas realizar.
+1. **Selecciona la opción deseada:** Ingresa la información que se muestra en la pantalla de la terminal.
 
-2. **Ingresa la cantidad:** Después de seleccionar la opción, se te pedirá que ingreses la cantidad que deseas convertir.
+2. **Ingresa el titulo del libro:** Después de seleccionar la opción, se te pedirá que ingreses una palabra que sea parte del titulo del libro.
 
-3. **Obtén el resultado:** La aplicación mostrará el resultado de la conversión utilizando la tasa de cambio actual.
+3. **Obtén el resultado:** La aplicación mostrará el resultado de la consulta en la BD de Gutendex y lo indexará en una base de datos propia.
 
 ### Ejemplo
-Si seleccionas 1 para convertir de USD a CLP e ingresas 100, el programa te mostrará algo como:
+Si seleccionas 1 para consultar un libro:
 ```sh
-El resultado de convertir 100 USD a CLP es: 90031.67 CLP
-```
+Escribe el nombre del libro:
+Mar
+Buscando libro por titulo...
 
+Libro Encontrado
+---------- LIBROS -------
+ Titulo: Middlemarch
+ Autor: Eliot, George
+ Nacio en: 1819
+ Murio en: 1880
+ Idioma: [en]
+ Descargas: 54135.0
+------------------------- 
+```
+Si selecionnas 2 para consultar los libros que ya has buscado:
+```sh
+Estos son los libros registrados en nuestra base de datos: 
+
+---------- LIBROS -------
+ Titulo: My Life — Volume 1
+ Autor: Wagner, Richard
+ Nacio en: 1813
+ Murio en: 1883
+ Idioma: [en]
+ Descargas: 41674.0
+-------------------------
+---------- LIBROS -------
+ Titulo: Don Quijote
+ Autor: Cervantes Saavedra, Miguel de
+ Nacio en: 1547
+ Murio en: 1616
+ Idioma: [es, en]
+ Descargas: 16728.0
+-------------------------
+---------- LIBROS -------
+ Titulo: Middlemarch
+ Autor: Eliot, George
+ Nacio en: 1819
+ Murio en: 1880
+ Idioma: [en]
+ Descargas: 54135.0
+-------------------------
+```
 # Autor
 Octavio Isaías Benitez Morales
 
